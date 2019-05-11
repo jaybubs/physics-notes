@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{array} 
+\newcolumntype{C}{>{$}c<{$}} % math-mode version of "c" column type
+\begin{document}
+
+\begin{align*}{2}
+	H &=\int d^3x \quad &&\Pi^2 + (\nabla\phi)^2 + \mu^2\phi^2\\\\
+	\phi(x) &= \int \frac{d^3p}{\tau^3 2E} &&\left(e^{ipx}a_p + e^{-ipx}a^*_p\right) \\
+	\implies \phi^2 &= \int\int \frac{d^3p\, d^3k}{\tau^6 4EK} &&\left(e^{ix(p+k)}a_pa_k+e^{ix(p-k)}a_pa_k^*+e^{ix(k-p)}a_p^*a_k+e^{-ix(p+k)}a_p^*a_k^*\right)\\\\
+	\nabla\phi&=\int \frac{d^3p\, p i}{\tau^32E} &&\left(e^{ipx}a_p + e^{-ipx}a^*_p\right)\\
+	\implies(\nabla\phi)^2 &= \int\int \frac{d^3p\,d^3k\, i^2 (p\cdot k)}{\tau^64EK} &&\left(e^{ix(p+k)}a_pa_k-e^{ix(p-k)}a_pa_k^*-e^{ix(k-p)}a_p^*a_k+e^{-ix(p+k)}a_p^*a_k^*\right)\\\\
+	\dot{\phi}=\Pi&=\int \frac{d^3p\,iE}{\tau^3 2E} &&\left(e^{ipx}a_p-e^{-ipx}a_p^*\right)\\
+	\implies \Pi^2&=\int\int \frac{d^3p\,d^3k\,i^2EK}{\tau^64EK} &&\left(e^{ix(p+k)}a_pa_k-e^{ix(p-k)}a_pa_k^*-e^{ix(k-p)}a_p^*a_k+e^{-ix(p+k)}a_p^*a_k^*\right)
+\end{align*}
+\begin{table}[!h]
+	\centering
+	\caption{coefficents as far}
+	\begin{tabular}{C|C|C|C|C}
+		& a_pa_k & a_pa_k^* & a_p^*a_k & a_p^*a_k^*\\
+		\phi^2 &+e(p+k &+e(p-k &+e(k-p &+e(-p-k\\
+		(\nabla\phi)^2 &+e(p+k &-e(p-k &-e(k-p &+e(-p-k\\
+		\Pi^2 &+e(p+k &-e(p-k &-e(k-p &+e(-p-k\\
+	\end{tabular}
+\end{table}
+	\begin{align*}
+		[a_p,a_k^*]&=2E\tau^3\delta^3(p-k)=a_pa_k^* - a_k^*a_p\\
+		a_pa_k^*&=a_k^*a_p+2E\tau^3\delta^3(p-k)
+	\end{align*}
+    \begin{align*}
+        \delta(a-b)&= \frac{1}{\tau} \int dx e^{(a-b)ix}\\
+        f(y)&=\int dx f(x) \delta(x-y)
+    \end{align*}
+\pagebreak
+\begin{align*}
+	H &=\int d^3x \quad &&\Pi^2 + (\nabla\phi)^2 + \mu^2\phi^2\\\\
+	[a_p,a_k^*]&=2E\tau^3\delta^3(p-k)&&=a_pa_k^* - a_k^*a_p\\\\
+    %
+	\mu^2\phi^2 &= \mu^2\int\int \frac{d^3p\, d^3k}{\tau^6 4EK} &&\left(e^{ix(p+k)}a_pa_k+e^{ix(p-k)}a_pa_k^*+e^{ix(k-p)}a_p^*a_k+e^{-ix(p+k)}a_p^*a_k^*\right)\\\\
+	\mu^2\int d^3x \phi^2 &= \mu^2\int\int \frac{d^3p\, d^3k}{\tau^3 4EK}&& \left(\delta{(p+k)}a_pa_k+\delta{(p-k)}a_pa_k^*+\delta{(k-p)}a_p^*a_k+\delta{(p+k)}a_p^*a_k^*\right)\\
+	\mu^2\int d^3x \phi^2 &=\mu^2 \int \frac{d^3p}{\tau^3 4EE}&& \left(-a_pa_{-p}+a_pa_p^*+a_p^*a_p-a_p^*a_{-p}^*\right)\\\\
+    %
+	(\nabla\phi)^2 &= \int\int \frac{d^3p\,d^3k\, i^2 (p\cdot k)}{\tau^64EK} &&\left(e^{ix(p+k)}a_pa_k-e^{ix(p-k)}a_pa_k^*-e^{ix(k-p)}a_p^*a_k+e^{-ix(p+k)}a_p^*a_k^*\right)\\
+    \int d^3x(\nabla\phi)^2 &= \int\int \frac{d^3p\,d^3k\, i^2 (p\cdot k)}{\tau^34EK} &&\left(\delta(p+k)a_pa_k-\delta(p-k)a_pa_k^*-\delta(p-k)a_p^*a_k+\delta(p+k)a_p^*a_k^*\right)\\
+    \int d^3x(\nabla\phi)^2 &= -\int\frac{d^3p\, (p\cdot -p)}{\tau^34EE} &&\left(-a_pa_{-p}-a_pa_p^*-a_p^*a_p-a_p^*a_{-p}^*\right)\\\\
+    %
+	\Pi^2&=\int\int \frac{d^3p\,d^3k\,i^2EK}{\tau^64EK} &&\left(e^{ix(p+k)}a_pa_k-e^{ix(p-k)}a_pa_k^*-e^{ix(k-p)}a_p^*a_k+e^{-ix(p+k)}a_p^*a_k^*\right)\\
+    \int d^3x \Pi^2&=\int\int \frac{d^3p\,d^3k\,i^2EK}{\tau^64EK}&&\left(\delta(p+k)a_pa_k-\delta(p-k)a_pa_k^*-\delta(p-k)a_p^*a_k+\delta(p+k)a_p^*a_k^*\right)\\
+    \int d^3x \Pi^2&=-\int\frac{d^3p\,EE}{\tau^34EE} &&\left(-a_pa_{-p}-a_pa_p^*-a_p^*a_p-a_p^*a_{-p}^*\right)\\\\
+\end{align*}
+\begin{table}[!h]
+	\centering
+	\caption{coefficents}
+	\begin{tabular}{C|C|C|C}
+		 & \phi^{2} & (\nabla\phi^{2}) & \Pi^{2} \\
+		a_{p}a_{-p} & -\mu^2 & -(p\cdot p) & E^{2} \\
+	a_pa_p^{*} & \mu^2 & -(p\cdot p) & E^{2} \\
+	a_p^*a_p& \mu^2 & -(p\cdot p) & E^{2} \\
+	a_{p}^*a_{-p}^* & -\mu^2 & -(p\cdot p) & E^{2} \\
+	\end{tabular}
+\end{table}
+\begin{align*}
+	E^2=p^2+m^2
+	-m^2=-E^2+p^2
+	I = \int f(x)dx\\
+	I^2 = \int f(x)dx \int f(x)dx\\
+	or\\
+	I^2 = \int f(x)dx \int f(x')dx'\\
+\end{align*}
+\end{document}
