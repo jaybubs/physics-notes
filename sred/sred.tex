@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{physics} 
+\usepackage{array} 
+\newcolumntype{C}{>{$}c<{$}} % math-mode version of "c" column type
+\begin{document}
+
+\section*{SHM path integral}%
+\label{sec:shm_path_integral}
+
+Start with a hammy:
+
+\begin{equation}
+\begin{aligned}
+	H \left(P,Q\right) = \frac{P^2}{2m} + \frac{m\omega^2Q^2}{2} 
+\end{aligned}
+\end{equation}
+Interested in gound state to ground state, using:
+\begin{equation}
+\begin{aligned}
+	\braket{0}{0} &= \braket{0}{q_n}\braket{q_{n-1}}{q_{n-2}}\ldots \braket{q_1}{0} \\
+		      &\Downarrow \\
+	\braket{0}{0} &= \int \mathcal{D}p \mathcal{D}q \,exp \left[i \int_{-\infty}^{\infty}dt \left(p\dot{q} - \left(1-i\epsilon)H + fq \right)\right)\right] \label{aaaa}
+\end{aligned}
+\end{equation}
+applying $(1-i\epsilon)$ on H leads to:
+\begin{equation}
+\begin{aligned}
+	m\omega^2 &\rightarrow (1-i\epsilon)m\omega^2 \\
+		  & and \\
+	m^{-1} &\rightarrow (1-i\epsilon)m^{-1} \\
+	\hookrightarrow &\frac{(1-i\epsilon)(1+i\epsilon)}{m(1+i\epsilon)} = \frac{1+i\epsilon-i\epsilon+\mathcal{O}(2)}{m(1+i\epsilon)} \\
+	\Rightarrow m &\rightarrow (1+i\epsilon)m
+\end{aligned}
+\end{equation}
+subbing back into \ref{aaaa}
+\begin{equation}
+\begin{aligned}
+	\braket{0}{0} &= \int \mathcal{D}p \mathcal{D}q \,exp \left[i \int_{-\infty}^{\infty}dt \left(p\dot{q} - \frac{P^2}{(1+i\epsilon)2m} - \frac{1-i\epsilon}{2} m\omega^2Q^2 + fq \right)\right]
+\end{aligned}
+\end{equation}
+
+\begin{align}
+	\int \frac{d\omega}{\tau} \frac{e^{-i\omega(t-t')}}{-2i\omega\epsilon} 
+\end{align}
+
+
+
+
+\end{document}
