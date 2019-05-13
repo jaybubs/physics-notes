@@ -1,8 +1,8 @@
 \documentclass{article}
 \usepackage[margin=0.5in]{geometry}
 \usepackage{amsmath}
-\usepackage{physics} 
-\usepackage{array} 
+\usepackage{physics}
+\usepackage{array}
 \newcolumntype{C}{>{$}c<{$}} % math-mode version of "c" column type
 \begin{document}
 
@@ -11,41 +11,32 @@
 
 Start with a hammy:
 
-\begin{equation}
-\begin{aligned}
-	H \left(P,Q\right) = \frac{P^2}{2m} + \frac{m\omega^2Q^2}{2} 
-\end{aligned}
-\end{equation}
-Interested in gound state to ground state, using:
-\begin{equation}
-\begin{aligned}
-	\braket{0}{0} &= \braket{0}{q_n}\braket{q_{n-1}}{q_{n-2}}\ldots \braket{q_1}{0} \\
-		      &\Downarrow \\
-	\braket{0}{0} &= \int \mathcal{D}p \mathcal{D}q \,exp \left[i \int_{-\infty}^{\infty}dt \left(p\dot{q} - \left(1-i\epsilon)H + fq \right)\right)\right] \label{aaaa}
-\end{aligned}
-\end{equation}
-applying $(1-i\epsilon)$ on H leads to:
-\begin{equation}
-\begin{aligned}
-	m\omega^2 &\rightarrow (1-i\epsilon)m\omega^2 \\
-		  & and \\
-	m^{-1} &\rightarrow (1-i\epsilon)m^{-1} \\
-	\hookrightarrow &\frac{(1-i\epsilon)(1+i\epsilon)}{m(1+i\epsilon)} = \frac{1+i\epsilon-i\epsilon+\mathcal{O}(2)}{m(1+i\epsilon)} \\
-	\Rightarrow m &\rightarrow (1+i\epsilon)m
-\end{aligned}
-\end{equation}
-subbing back into \ref{aaaa}
-\begin{equation}
-\begin{aligned}
-	\braket{0}{0} &= \int \mathcal{D}p \mathcal{D}q \,exp \left[i \int_{-\infty}^{\infty}dt \left(p\dot{q} - \frac{P^2}{(1+i\epsilon)2m} - \frac{1-i\epsilon}{2} m\omega^2Q^2 + fq \right)\right]
-\end{aligned}
-\end{equation}
-
 \begin{align}
-	\int \frac{d\omega}{\tau} \frac{e^{-i\omega(t-t')}}{-2i\omega\epsilon} 
+	H \left(P,Q\right) = \frac{P^2}{2m} + \frac{m\omega^2Q^2}{2}
+\end{align}
+In path integrals, operators are functions so $P \rightarrow p$ and $Q \rightarrow q$. Here we're interested in gound state to ground state, because of reasons. Using:
+\begin{align}
+	\braket{0}{0} &= \braket{0}{q_n}\braket{q_{n-1}}{q_{n-2}}\ldots \braket{q_1}{0} \\
+		      &\Downarrow \nonumber \\
+	\braket{0}{0} &= \int \mathcal{D}p \mathcal{D}q \,exp \left[i \int_{-\infty}^{\infty}dt \left(p\dot{q} - \left(1-i\epsilon)H + fq \right)\right)\right] \label{a1}
+\end{align}
+Where H is Weyl-ordered (average of normal and anti-normal ordering).\\
+Applying $(1-i\epsilon)$ on H will pick out the ground states in $\pm\infty$ time, leads to the following transforms:
+\begin{align}
+	\frac{1}{2}m\omega^2q &\rightarrow \frac{1}{2}(1-i\epsilon)m\omega^2 \\
+		  & and \\
+	\frac{1}{2m}p^2 &\rightarrow \frac{1}{2(1-i\epsilon)m}p^2 = \frac{(1-i\epsilon)(1+i\epsilon)}{2m(1+i\epsilon)}p^2 = \frac{1+i\epsilon-i\epsilon+\mathcal{O}(2)}{2m(1+i\epsilon)}p^2 \\
+\Rightarrow \frac{1}{2m}p^2 &\rightarrow \frac{1}{2(1+i\epsilon)m}p^2
+\end{align}
+subbing back into \ref{a1}:
+\begin{align}
+	\braket{0}{0} &= \int \mathcal{D}p \mathcal{D}q \,exp \left[i \int_{-\infty}^{\infty}dt \left(p\dot{q} - \frac{p^2}{(1+i\epsilon)2m} - \frac{1-i\epsilon}{2} m\omega^2q^2 + fq \right)\right]
 \end{align}
 
-
+now the sweet insides can be integrated out over $\mathcal{D}p$ to turn it into a laggy, using:
+\begin{align}
+	\partial_{p}\mathcal{H} = \dot{q}
+\end{align}
 
 
 \end{document}

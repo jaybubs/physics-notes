@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1557613795 "sred.tex" "sred.pdf" "sred" 1557613796
+["pdflatex"] 1557724144 "sred.tex" "sred.pdf" "sred" 1557724146
   "c:/Latex/Miktex/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt" 1556051006 807562 e9dc858901155274590af2a0fa8c14ea ""
   "c:/Latex/Miktex/texmfs/data/pdftex/config/pdftex.map" 1557606442 81807 60358c3585a94cf8dca139ac1bcd7b39 ""
   "c:/Latex/Miktex/texmfs/install/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -13,7 +13,6 @@
   "c:/Latex/Miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
   "c:/Latex/Miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1247596667 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "c:/Latex/Miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
-  "c:/Latex/Miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy5.pfb" 1247596666 32915 7bf7720c61a5b3a7ff25b0964421c9b6 ""
   "c:/Latex/Miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1247596666 32716 08e384dc442464e7285e891af9f45947 ""
   "c:/Latex/Miktex/texmfs/install/tex/generic/ifxetex/ifxetex.sty" 1284260789 1458 43ab4710dc82f3edeabecd0d099626b2 ""
   "c:/Latex/Miktex/texmfs/install/tex/generic/oberdiek/ifpdf.sty" 1543581079 1300 96620a7d94bc0ceb261d968770ce8315 ""
@@ -35,9 +34,9 @@
   "c:/Latex/Miktex/texmfs/install/tex/latex/l3packages/xparse/xparse.sty" 1551774890 81462 655bedd2015c238adc6b36a18cbe98c9 ""
   "c:/Latex/Miktex/texmfs/install/tex/latex/physics/physics.sty" 1356002062 29610 a9597219b282d9c78b02393dcd7d4322 ""
   "c:/Latex/Miktex/texmfs/install/tex/latex/tools/array.sty" 1544472630 12510 83033a46541e4a36a2514de98c273039 ""
-  "sred.aux" 1557613796 75 8676908c8fe75b65a420bacc92abaa57 "pdflatex"
-  "sred.tex" 1557613793 1638 37a70239d1791def7dcab81558dc9d9f ""
+  "sred.aux" 1557724145 73 b4b3fbe3813c104196707b5c62039394 "pdflatex"
+  "sred.tex" 1557724143 1870 c861a0c7d216caa440a64b173d3cafe1 ""
   (generated)
-  "sred.pdf"
   "sred.aux"
+  "sred.pdf"
   "sred.log"
