@@ -33,10 +33,22 @@ subbing back into \ref{a1}:
 	\braket{0}{0} &= \int \mathcal{D}p \mathcal{D}q \,exp \left[i \int_{-\infty}^{\infty}dt \left(p\dot{q} - \frac{p^2}{(1+i\epsilon)2m} - \frac{1-i\epsilon}{2} m\omega^2q^2 + fq \right)\right]
 \end{align}
 
-now the sweet insides can be integrated out over $\mathcal{D}p$ to turn it into a laggy, using:
+now the sweet insides can be integrated out over $\mathcal{D}p$ to turn it into a laggy, using $\partial_{p}\mathcal{H} = \dot{q}$ :
 \begin{align}
-	\partial_{p}\mathcal{H} = \dot{q}
+	\braket{0}{0}=\int \mathcal{D}q \,exp \left[ i \int_{-\infty}^{\infty}dt \left( \frac{1}{2}(1+i\epsilon)m\dot{q}^2 - \frac{1}{2}(1-i\epsilon)m\omega^2q^2 + fq \right) \right] \label{a2}
 \end{align}
-
-
+Next up, perform a fourier transform to get this shit into functions of energies and shit. Use these variables, they're good, trust me, you are me after all:
+\begin{align}
+	q(t)&=\int_{-\infty}^{\infty} \frac{dE}{\tau} e^{-iEt} \tilde{q}(t) \\
+	\dot{q}(t)&=\int_{-\infty}^{\infty} -\frac{dE}{\tau}\,iE\,e^{-iEt} \tilde{q}(t) \\
+\tilde{q}(E)&=\int_{-\infty}^{\infty}dt\,e^{iEt}q(t)
+\end{align}
+Now take all that rubbish and shove it into the terms in \ref{a2} \\ do not forget that there's squared variables so we'll have to integrate over two different variables, thus E and E', and t and t'
+\begin{align}
+	\braket{0}{0}_f = \int \mathcal{D}q\, exp \left\{ \frac{i}{2} \int_{-\infty}^{\infty} \frac{dE}{\tau} \frac{dE'}{\tau}\, e^{-i(E+E')t} \bigg[ \Big( -(1+i\epsilon)EE' - (1-i\epsilon)\omega^2 \Big) \tilde{q}(E) \tilde{q}(E') + \tilde{f}(E) \tilde{q}(E') + \tilde{f}(E') \tilde{q}(E) \bigg] \right\}
+\end{align}
+Now it looks like a fucking goddamn mess, but we can integrate over E' using a neat delta function:
+\begin{align}
+	\tau \delta(a-b)= \int dx\,e^{i(a-b)x}
+\end{align}
 \end{document}
