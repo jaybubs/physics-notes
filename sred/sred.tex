@@ -39,8 +39,8 @@ now the sweet insides can be integrated out over $\mathcal{D}p$ to turn it into 
 \end{align}
 Next up, perform a fourier transform to get this shit into functions of energies and shit. Use these variables, they're good, trust me, you are me after all:
 \begin{align}
-	q(t)&=\int_{-\infty}^{\infty} \frac{dE}{\tau} e^{-iEt} \tilde{q}(t) \\
-	\dot{q}(t)&=\int_{-\infty}^{\infty} -\frac{dE}{\tau}\,iE\,e^{-iEt} \tilde{q}(t) \\
+	q(t)&=\int_{-\infty}^{\infty} \frac{dE}{\tau} e^{-iEt} \tilde{q}(E) \\
+	\dot{q}(t)&=\int_{-\infty}^{\infty} -\frac{dE}{\tau}\,iE\,e^{-iEt} \tilde{q}(E) \\
 \tilde{q}(E)&=\int_{-\infty}^{\infty}dt\,e^{iEt}q(t)
 \end{align}
 Now take all that rubbish and shove it into the terms in \ref{a2} \\ do not forget that there's squared variables so we'll have to integrate over two different variables, thus E and E', and t and t'
@@ -49,6 +49,20 @@ Now take all that rubbish and shove it into the terms in \ref{a2} \\ do not forg
 \end{align}
 Now it looks like a fucking goddamn mess, but we can integrate over E' using a neat delta function:
 \begin{align}
-	\tau \delta(a-b)= \int dx\,e^{i(a-b)x}
+	\tau \delta(a-b)= \int dx\,e^{i(a-b)x} \implies \frac{1}{2} \int \frac{dE\,dE'}{\tau^2} \,\delta(E+E') [ \ldots ]
+\end{align}
+\newpage Reslutting in:
+\begin{align}
+	\braket{0}{0}_f = \int \mathcal{D}q\, exp \Bigg\{ \frac{1}{2} \int_{-\infty}^{\infty} \frac{dE}{\tau} \bigg[ &\underbrace{ \Big( (1+i\epsilon)E^2 - (1-i\epsilon)\omega^2 \Big) }_{\downarrow} \tilde{q}(E) \tilde{q}(-E) + \tilde{f}(E) \tilde{q}(-E) + \tilde{f}(-E) \tilde{q}(E) \bigg]  \Bigg\} \label{a4} \\
+														     &E^2 - \omega^2 + i(E^2 + \omega^2)\epsilon \implies E^2 - \omega^2 - i\epsilon \label{a3}
+\end{align}
+Now as a magic trick we do a little quasigauge shift. We gunna introduce x as a shift of q and the inverse of \ref{a3}. The benefit of this is that since it's a linear shift in q/x only the measure won't change:
+\begin{align}
+	\tilde{x}(E) &= \tilde{q}(E) + \frac{ \tilde{f}(E) }{E^2 - \omega^2 + i\epsilon } \\
+	\mathcal{D}q &= \mathcal{D}x
+\end{align}
+Substituting back into \ref{a4} and splitting the path integral into a phase dependent on x and independent of x:
+\begin{align}
+	\braket{0}{0}_f = exp \bigg[ \frac{i}{2} \int \frac{dE}{\tau} \frac{ \tilde{f}(E) \tilde{f}(-E) }{-E^2+\omega^2-i\epsilon} \bigg] \cdot \underbrace{ \int \mathcal{D}x\, exp \bigg[ \frac{i}{2} \int \frac{dE}{\tau} \tilde{x}(E) (E^2 - \omega^2 +i\epsilon) \tilde{x}(-E) \bigg] }_{\text{when} f=0 \implies \braket{0}{0}_f	\, = \, 1 \text{which is the ground state}}
 \end{align}
 \end{document}

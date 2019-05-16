@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930) (preloaded format=pdflatex 2019.4.23)  15 MAY 2019 07:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930) (preloaded format=pdflatex 2019.4.23)  16 MAY 2019 22:57
 entering extended mode
 **./sred.tex
 (sred.tex
@@ -339,28 +339,29 @@ LaTeX Font Info:    ... okay on input line 7.
 
 [1
 
-{c:/Latex/Miktex/texmfs/data/pdftex/config/pdftex.map}] (sred.aux) ) 
+{c:/Latex/Miktex/texmfs/data/pdftex/config/pdftex.map}] [2] (sred.aux) ) 
 Here is how much of TeX's memory you used:
- 11518 strings out of 494846
- 211688 string characters out of 3178172
- 252542 words of memory out of 3000000
- 15190 multiletter control sequences out of 15000+200000
+ 11520 strings out of 494846
+ 211696 string characters out of 3178172
+ 252560 words of memory out of 3000000
+ 15192 multiletter control sequences out of 15000+200000
  533397 words of font info for 28 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 47i,13n,65p,331b,317s stack positions out of 5000i,500n,10000p,200000b,50000s
-<c:/Latex/M
-iktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Latex/Miktex
-/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/Latex/Miktex/texm
-fs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Latex/Miktex/texmfs/in
-stall/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/Latex/Miktex/texmfs/install/
-fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Latex/Miktex/texmfs/install/fonts/
-type1/public/amsfonts/cm/cmr7.pfb><c:/Latex/Miktex/texmfs/install/fonts/type1/p
-ublic/amsfonts/cm/cmsy10.pfb><c:/Latex/Miktex/texmfs/install/fonts/type1/public
-/amsfonts/cm/cmsy5.pfb><c:/Latex/Miktex/texmfs/install/fonts/type1/public/amsfo
-nts/cm/cmsy7.pfb>
-Output written on sred.pdf (1 page, 100068 bytes).
+ 47i,19n,65p,377b,317s stack positions out of 5000i,500n,10000p,200000b,50000s
+<c:/Lat
+ex/Miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Latex/Mi
+ktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/Latex/Miktex/
+texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Latex/Miktex/texmf
+s/install/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/Latex/Miktex/texmfs/inst
+all/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/Latex/Miktex/texmfs/install/fo
+nts/type1/public/amsfonts/cm/cmr10.pfb><c:/Latex/Miktex/texmfs/install/fonts/ty
+pe1/public/amsfonts/cm/cmr7.pfb><c:/Latex/Miktex/texmfs/install/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb><c:/Latex/Miktex/texmfs/install/fonts/type1/public/a
+msfonts/cm/cmsy5.pfb><c:/Latex/Miktex/texmfs/install/fonts/type1/public/amsfont
+s/cm/cmsy7.pfb>
+Output written on sred.pdf (2 pages, 116496 bytes).
 PDF statistics:
- 42 PDF objects out of 1000 (max. 8388607)
+ 49 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
