@@ -1,4 +1,5 @@
 \documentclass{article}
+\usepackage{lmodern}
 \usepackage[margin=0.5in]{geometry}
 \usepackage{amsmath}
 \usepackage{physics}
@@ -63,6 +64,32 @@ Now as a magic trick we do a little quasigauge shift. We gunna introduce x as a 
 \end{align}
 Substituting back into \ref{a4} and splitting the path integral into a phase dependent on x and independent of x:
 \begin{align}
-	\braket{0}{0}_f = exp \bigg[ \frac{i}{2} \int \frac{dE}{\tau} \frac{ \tilde{f}(E) \tilde{f}(-E) }{-E^2+\omega^2-i\epsilon} \bigg] \cdot \underbrace{ \int \mathcal{D}x\, exp \bigg[ \frac{i}{2} \int \frac{dE}{\tau} \tilde{x}(E) (E^2 - \omega^2 +i\epsilon) \tilde{x}(-E) \bigg] }_{\text{when} f=0 \implies \braket{0}{0}_f	\, = \, 1 \text{which is the ground state}}
+	\braket{0}{0}_f = \underbrace{ exp \bigg[ \frac{i}{2} \int \frac{dE}{\tau} \frac{ \tilde{f}(E) \tilde{f}(-E) }{-E^2+\omega^2-i\epsilon} \bigg] }_{\text{basically \textit{the} interesting part - the propagator comes from here}} \cdot \underbrace{ \int \mathcal{D}x\, exp \bigg[ \frac{i}{2} \int \frac{dE}{\tau} \tilde{x}(E) (E^2 - \omega^2 +i\epsilon) \tilde{x}(-E) \bigg] }_{\text{when } f=0 \implies \braket{0}{0}_f	\, = \, 1 \text{ which is the ground state}} \\
+\end{align}
+As noted by Srednicki - a system in a ground state will remain in a ground state (aka itial and final states are ground $\braket{0}{0}$) unless acted on by an external force ($f \neq 0$) - which in this case it is, resulting in there being a propagator - a source term/current term (very much related to the J term in maxwell's eqns - in this case just the driving fq term. \\
+To actually proceed solving this we'll idntify the partts of the first term that aren't $\tilde{f}(something)$ dependent, act with that on a phasor and call it a green function. this will let us do a fourier/delta transform thing.
+\begin{align}
+	\braket{0}{0}_f &= exp \bigg[ \frac{i}{2} \int \underbrace{ \frac{dE}{\tau(-E^2+\omega^2-i\epsilon)}}_{\text{green fx}} \, \tilde{f}(E) \tilde{f}(-E) \bigg] \\
+	G(t-t') &= \int \frac{dE}{\tau(-E^2+\omega^2-i\epsilon)} \; e^{-iE(t-t')} \label{b1}
+\end{align}
+Where the green function is a solution to the wave eqn
+\begin{align}
+	(\partial_{t}^2 + \omega^2)G(t-t') = \delta(t-t') \label{b2}
+\end{align}
+in other words it's a well dressed delta function. or in other other words, a green function is the inverse of a differential operator. or in other other words it's a convolution function. there may be some other other other words, but idk, it should be pretty obv from its application how it works innit. \\
+Most importantly however, a green function is what's more commonly known as the propagator. \\
+In any case, let's actually test it out by chucking \ref{b1} into \ref{b2} explicitly:
+\begin{align}
+	&(\partial_{t}^2 + \omega^2) \int \frac{dE}{\tau(-E^2+\omega^2-i\epsilon)} \; e^{-iE(t-t')} = \int \frac{dE}{\tau(-E^2+\omega^2-i\epsilon)} \; \left(\partial_{t}^2e^{-iE(t-t')} + \omega^2e^{-iE(t-t')}\right) = \\[1.5ex]
+	&= \int \frac{dE}{\tau(-E^2+\omega^2-i\epsilon)} \; \left((-iE)(-iE)e^{-iE(t-t')} + \omega^2e^{-iE(t-t')}\right) = \int \frac{dE}{\tau(-E^2+\omega^2-i\epsilon)} \; \left(-E^2 + \omega^2\right)e^{-iE(t-t')} = \\[1.5ex]
+	&=  \int \frac{dE}{\tau} \frac{\left(-E^2 + \omega^2\right)}{(-E^2+\omega^2-i\epsilon)} \; e^{-iE(t-t')}\stackrel{\epsilon \rightarrow 0}{=} \int \frac{dE}{\tau} \frac{\left(-E^2 + \omega^2\right)}{(-E^2+\omega^2)} \; e^{-iE(t-t')} = \int \frac{dE}{\tau} \; e^{-iE(t-t')} = \delta(t-t')
+\end{align}
+Beautiful, it fits. But back to business, but let's actually evaluate the propagator, we're gonna use funky ass Cauchy residue theorem or whatever the hell its properly called:
+\begin{align}
+\oint_{\gamma} f(z)dz = \tau i \sum_{a_i \in \gamma} Res_{z=a_i} f(z)
+\end{align}
+Aka sum all the poles $a_i$ within the $\gamma$ contour. The residue is then just the value of the function without the particular pole. So first cleverly split the bottom term into the roots of a completed square (factoring out a minus overall to have nicer plusminuses to work with):
+\begin{align}
+	\int \frac{dE\; e^{-iE(t-t')}}{\tau(-E^2+\omega^2-i\epsilon)}  = -\int \frac{dE \; e^{-iE(t-t')}}{\tau\left( E + \sqrt{\omega^2 + i\epsilon}\right)\left( E + \sqrt{\omega^2 - i\epsilon}\right)}=
 \end{align}
 \end{document}
