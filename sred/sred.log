@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930) (preloaded format=pdflatex 2019.4.23)  19 MAY 2019 21:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930) (preloaded format=pdflatex 2019.4.23)  25 MAY 2019 22:58
 entering extended mode
 **./sred.tex
 (sred.tex
@@ -322,22 +322,25 @@ Package: array 2018/11/13 v2.4j Tabular extension package (FMi)
 \extratabsurround=\skip52
 \backup@length=\skip53
 \ar@cellbox=\box48
+)
+(c:\Latex\Miktex\texmfs\install\tex/latex/cancel\cancel.sty
+Package: cancel 2013/04/12 v2.2 Cancel math terms
 ) (sred.aux)
 \openout1 = `sred.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 9.
 
 (c:\Latex\Miktex\texmfs\install\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -376,56 +379,58 @@ File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 15.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 16.
 (c:\Latex\Miktex\texmfs\install\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 15.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 16.
 
 
 (c:\Latex\Miktex\texmfs\install\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 15.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 16.
 
 
 (c:\Latex\Miktex\texmfs\install\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 15.
+(Font)              <10> on input line 16.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 15.
+(Font)              <7> on input line 16.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 15.
+(Font)              <5> on input line 16.
  [1
 
-{c:/Latex/Miktex/texmfs/data/pdftex/config/pdftex.map}] [2] (sred.aux) ) 
+{c:/Latex/Miktex/texmfs/data/pdftex/config/pdftex.map}] [2] [3] [4] [5] (sred.a
+ux) ) 
 Here is how much of TeX's memory you used:
- 11616 strings out of 494846
- 213783 string characters out of 3178172
- 255718 words of memory out of 3000000
- 15261 multiletter control sequences out of 15000+200000
+ 11651 strings out of 494846
+ 214237 string characters out of 3178172
+ 261584 words of memory out of 3000000
+ 15292 multiletter control sequences out of 15000+200000
  561904 words of font info for 39 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 47i,19n,65p,479b,317s stack positions out of 5000i,500n,10000p,200000b,50000s
-{c:/Lat
-ex/Miktex/texmfs/install/fonts/enc/dvips/lm/lm-mathit.enc}{c:/Latex/Miktex/texm
-fs/install/fonts/enc/dvips/lm/lm-rm.enc}{c:/Latex/Miktex/texmfs/install/fonts/e
-nc/dvips/lm/lm-mathsy.enc}{c:/Latex/Miktex/texmfs/install/fonts/enc/dvips/lm/lm
--mathex.enc}<c:/Latex/Miktex/texmfs/install/fonts/type1/public/lm/lmbx12.pfb><c
-:/Latex/Miktex/texmfs/install/fonts/type1/public/lm/lmex10.pfb><c:/Latex/Miktex
-/texmfs/install/fonts/type1/public/lm/lmmi10.pfb><c:/Latex/Miktex/texmfs/instal
-l/fonts/type1/public/lm/lmmi5.pfb><c:/Latex/Miktex/texmfs/install/fonts/type1/p
-ublic/lm/lmmi7.pfb><c:/Latex/Miktex/texmfs/install/fonts/type1/public/lm/lmr10.
-pfb><c:/Latex/Miktex/texmfs/install/fonts/type1/public/lm/lmr7.pfb><c:/Latex/Mi
-ktex/texmfs/install/fonts/type1/public/lm/lmri7.pfb><c:/Latex/Miktex/texmfs/ins
-tall/fonts/type1/public/lm/lmsy10.pfb><c:/Latex/Miktex/texmfs/install/fonts/typ
-e1/public/lm/lmsy5.pfb><c:/Latex/Miktex/texmfs/install/fonts/type1/public/lm/lm
-sy7.pfb>
-Output written on sred.pdf (2 pages, 145019 bytes).
+ 47i,24n,65p,511b,317s stack positions out of 5000i,500n,10000p,200000b,50000s
+{c:/Latex/Miktex/texmfs/install/fonts/enc/dvips/lm/lm-rm.enc}{c:/Latex/Mik
+tex/texmfs/install/fonts/enc/dvips/lm/lm-mathit.enc}{c:/Latex/Miktex/texmfs/ins
+tall/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/Latex/Miktex/texmfs/install/fonts/enc
+/dvips/lm/lm-mathex.enc}<c:/Latex/Miktex/texmfs/install/fonts/type1/public/amsf
+onts/latxfont/line10.pfb><c:/Latex/Miktex/texmfs/install/fonts/type1/public/lm/
+lmbx12.pfb><c:/Latex/Miktex/texmfs/install/fonts/type1/public/lm/lmex10.pfb><c:
+/Latex/Miktex/texmfs/install/fonts/type1/public/lm/lmmi10.pfb><c:/Latex/Miktex/
+texmfs/install/fonts/type1/public/lm/lmmi5.pfb><c:/Latex/Miktex/texmfs/install/
+fonts/type1/public/lm/lmmi7.pfb><c:/Latex/Miktex/texmfs/install/fonts/type1/pub
+lic/lm/lmr10.pfb><c:/Latex/Miktex/texmfs/install/fonts/type1/public/lm/lmr5.pfb
+><c:/Latex/Miktex/texmfs/install/fonts/type1/public/lm/lmr7.pfb><c:/Latex/Mikte
+x/texmfs/install/fonts/type1/public/lm/lmri10.pfb><c:/Latex/Miktex/texmfs/insta
+ll/fonts/type1/public/lm/lmri7.pfb><c:/Latex/Miktex/texmfs/install/fonts/type1/
+public/lm/lmsy10.pfb><c:/Latex/Miktex/texmfs/install/fonts/type1/public/lm/lmsy
+5.pfb><c:/Latex/Miktex/texmfs/install/fonts/type1/public/lm/lmsy7.pfb>
+Output written on sred.pdf (5 pages, 201514 bytes).
 PDF statistics:
- 57 PDF objects out of 1000 (max. 8388607)
+ 78 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

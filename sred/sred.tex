@@ -1,9 +1,10 @@
-\documentclass{article}
+\documentclass[10pt]{article}
 \usepackage{lmodern}
 \usepackage[margin=0.5in]{geometry}
 \usepackage{amsmath}
 \usepackage{physics}
 \usepackage{array}
+\usepackage{cancel} 
 \newcolumntype{C}{>{$}c<{$}} % math-mode version of "c" column type
 \begin{document}
 
@@ -15,76 +16,87 @@ Start with a hammy:
 \begin{align}
 	H \left(P,Q\right) = \frac{P^2}{2m} + \frac{m\omega^2Q^2}{2}
 \end{align}
-In path integrals, operators are functions so $P \rightarrow p$ and $Q \rightarrow q$. Here we're interested in gound state to ground state, because of reasons. Using:
+In path integrals, operators are functions so $P \rightarrow p$ and $Q \rightarrow q$. Here we're interested in ground state to ground state, because of reasons. We'd like to discretise the path from ground state to ground state, so we'll insert unity (a complete set of intermediate states) inside as many times as we want and evolve them from the previous one to the next ($q_{n-1} \to q_{n}$) so it'll look like this bad boy:
 \begin{align}
-	\braket{0}{0} &= \braket{0}{q_n}\braket{q_{n-1}}{q_{n-2}}\ldots \braket{q_1}{0} \\
+\braket{q_f,t_f}{q_i,t_i} = \int \prod_{j=1}^N dq_j \bra{q_f}e^{-iH\delta t}\ket{q_N}\bra{q_N}e^{-iH\delta t}\ket{q_{N-1}} \ldots \bra{q_1}e^{-iH\delta t}\ket{q_i}
+\end{align}
+Using that shizzle the path integral will take on the following form:
+\begin{align}
+	\braket{0}{0}_f &= \braket{0}{q_n}\braket{q_{n}}{q_{n-1}}\ldots \braket{q_1}{0} \\
 		      &\Downarrow \nonumber \\
-	\braket{0}{0} &= \int \mathcal{D}p \mathcal{D}q \,exp \left[i \int_{-\infty}^{\infty}dt \left(p\dot{q} - \left(1-i\epsilon)H + fq \right)\right)\right] \label{a1}
+	\braket{0}{0}_f &= \int \mathcal{D}p \mathcal{D}q \,exp \left[i \int_{-\infty}^{\infty}dt \left(p\dot{q} - \left(1-i\epsilon)H + fq \right)\right)\right] \label{a1}
 \end{align}
-Where H is Weyl-ordered (average of normal and anti-normal ordering).\\
-Applying $(1-i\epsilon)$ on H will pick out the ground states in $\pm\infty$ time, leads to the following transforms:
+Where H is Weyl-ordered (average of different combinations of ordering) and $\mathcal{D}q$ is the product integral measure:
 \begin{align}
-	\frac{1}{2}m\omega^2q &\rightarrow \frac{1}{2}(1-i\epsilon)m\omega^2 \\
-		  & and \\
-	\frac{1}{2m}p^2 &\rightarrow \frac{1}{2(1-i\epsilon)m}p^2 = \frac{(1-i\epsilon)(1+i\epsilon)}{2m(1+i\epsilon)}p^2 = \frac{1+i\epsilon-i\epsilon+\mathcal{O}(2)}{2m(1+i\epsilon)}p^2 \\
-\Rightarrow \frac{1}{2m}p^2 &\rightarrow \frac{1}{2(1+i\epsilon)m}p^2
+	\mathcal{D}q \propto \prod_x dq(x)
 \end{align}
-subbing back into \ref{a1}:
+Applying $(1-i\epsilon)$ to H will pick out the ground states in $\pm\infty$ time, leading to the following transforms:
 \begin{align}
-	\braket{0}{0} &= \int \mathcal{D}p \mathcal{D}q \,exp \left[i \int_{-\infty}^{\infty}dt \left(p\dot{q} - \frac{p^2}{(1+i\epsilon)2m} - \frac{1-i\epsilon}{2} m\omega^2q^2 + fq \right)\right]
+	\frac{1}{2}m\omega^2q^2 &\rightarrow \frac{1}{2}(1-i\epsilon)m\omega^2q^2 \label{qq}\\
+			      & \text{and} \nonumber \\
+	\frac{1}{2m}p^2 &\rightarrow \frac{(1-i\epsilon)}{2m}p^2 = \frac{(1-i\epsilon)(1+i\epsilon)}{2m(1+i\epsilon)}p^2 = \frac{1+i\epsilon-i\epsilon+\mathcal{O}(2)}{2m(1+i\epsilon)}p^2 \nonumber\\
+	\Rightarrow \frac{1}{2m}p^2 &\rightarrow \frac{1}{2(1+i\epsilon)m}p^2 \label{pp}
+\end{align}
+subbing (\ref{qq}) and (\ref{pp}) back into (\ref{a1}):
+\begin{align}
+	\braket{0}{0}_f &= \int \mathcal{D}p \mathcal{D}q \,exp \left[i \int_{-\infty}^{\infty}dt \left(p\dot{q} - \frac{p^2}{(1+i\epsilon)2m} - \frac{1-i\epsilon}{2} m\omega^2q^2 + fq \right)\right]
 \end{align}
 
 now the sweet insides can be integrated out over $\mathcal{D}p$ to turn it into a laggy, using $\partial_{p}\mathcal{H} = \dot{q}$ :
 \begin{align}
-	\braket{0}{0}=\int \mathcal{D}q \,exp \left[ i \int_{-\infty}^{\infty}dt \left( \frac{1}{2}(1+i\epsilon)m\dot{q}^2 - \frac{1}{2}(1-i\epsilon)m\omega^2q^2 + fq \right) \right] \label{a2}
+	\braket{0}{0}_f=\int \mathcal{D}q \,exp \left[ i \int_{-\infty}^{\infty}dt \left( \frac{1}{2}(1+i\epsilon)m\dot{q}^2 - \frac{1}{2}(1-i\epsilon)m\omega^2q^2 + fq \right) \right] \label{a2}
 \end{align}
 Next up, perform a fourier transform to get this shit into functions of energies and shit. Use these variables, they're good, trust me, you are me after all:
 \begin{align}
-	q(t)&=\int_{-\infty}^{\infty} \frac{dE}{\tau} e^{-iEt} \tilde{q}(E) \\
-	\dot{q}(t)&=\int_{-\infty}^{\infty} -\frac{dE}{\tau}\,iE\,e^{-iEt} \tilde{q}(E) \\
+	q(t)&=\int_{-\infty}^{\infty} \frac{dE}{\tau} e^{-iEt} \tilde{q}(E) \\[1.5Ex]
+	\dot{q}(t)&=\int_{-\infty}^{\infty} -\frac{dE}{\tau}\,iE\,e^{-iEt} \tilde{q}(E) \\[1.5Ex]
 \tilde{q}(E)&=\int_{-\infty}^{\infty}dt\,e^{iEt}q(t)
 \end{align}
-Now take all that rubbish and shove it into the terms in \ref{a2} \\ do not forget that there's squared variables so we'll have to integrate over two different variables, thus E and E', and t and t'
+Now take all that rubbish and shove it into the terms in (\ref{a2}). Do not forget that there's squared variables so we'll have to introduce a dummy variable to integrate over, thus E and E', and t and t':
 \begin{align}
 	\braket{0}{0}_f = \int \mathcal{D}q\, exp \left\{ \frac{i}{2} \int_{-\infty}^{\infty} \frac{dE}{\tau} \frac{dE'}{\tau}\, e^{-i(E+E')t} \bigg[ \Big( -(1+i\epsilon)EE' - (1-i\epsilon)\omega^2 \Big) \tilde{q}(E) \tilde{q}(E') + \tilde{f}(E) \tilde{q}(E') + \tilde{f}(E') \tilde{q}(E) \bigg] \right\}
 \end{align}
 Now it looks like a fucking goddamn mess, but we can integrate over E' using a neat delta function:
 \begin{align}
-	\tau \delta(a-b)= \int dx\,e^{i(a-b)x} \implies \frac{1}{2} \int \frac{dE\,dE'}{\tau^2} \,\delta(E+E') [ \ldots ]
+	\tau \delta(a-b)= \int dx\,e^{i(a-b)x} \implies \frac{1}{2} \int \frac{dE\,dE'}{\tau^2} \,\delta(E+E') [ \ldots ] \label{delta}
 \end{align}
-\newpage Reslutting in:
+Resulting in:
 \begin{align}
 	\braket{0}{0}_f = \int \mathcal{D}q\, exp \Bigg\{ \frac{1}{2} \int_{-\infty}^{\infty} \frac{dE}{\tau} \bigg[ &\underbrace{ \Big( (1+i\epsilon)E^2 - (1-i\epsilon)\omega^2 \Big) }_{\downarrow} \tilde{q}(E) \tilde{q}(-E) + \tilde{f}(E) \tilde{q}(-E) + \tilde{f}(-E) \tilde{q}(E) \bigg]  \Bigg\} \label{a4} \\
 														     &E^2 - \omega^2 + i(E^2 + \omega^2)\epsilon \implies E^2 - \omega^2 - i\epsilon \label{a3}
 \end{align}
-Now as a magic trick we do a little quasigauge shift. We gunna introduce x as a shift of q and the inverse of \ref{a3}. The benefit of this is that since it's a linear shift in q/x only the measure won't change:
+Now as a magic trick we'll do a little quasigauge shift. We gunna introduce x as a shift of q and the inverse of (\ref{a3}). The benefit of this is that since it's a linear shift in q/x the measure won't change:
 \begin{align}
 	\tilde{x}(E) &= \tilde{q}(E) + \frac{ \tilde{f}(E) }{E^2 - \omega^2 + i\epsilon } \\
 	\mathcal{D}q &= \mathcal{D}x
 \end{align}
-Substituting back into \ref{a4} and splitting the path integral into a phase dependent on x and independent of x:
+Substituting back into (\ref{a4}) and splitting the path integral into a phase dependent on x and not dependent on x:
 \begin{align}
-	\braket{0}{0}_f = \underbrace{ exp \bigg[ \frac{i}{2} \int \frac{dE}{\tau} \frac{ \tilde{f}(E) \tilde{f}(-E) }{-E^2+\omega^2-i\epsilon} \bigg] }_{\text{basically \textit{the} interesting part - the propagator comes from here}} \cdot \underbrace{ \int \mathcal{D}x\, exp \bigg[ \frac{i}{2} \int \frac{dE}{\tau} \tilde{x}(E) (E^2 - \omega^2 +i\epsilon) \tilde{x}(-E) \bigg] }_{\text{when } f=0 \implies \braket{0}{0}_f	\, = \, 1 \text{ which is the ground state}} \\
+	\braket{0}{0}_f = \underbrace{ exp \bigg[ \frac{i}{2} \int \frac{dE}{\tau} \frac{ \tilde{f}(E) \tilde{f}(-E) }{-E^2+\omega^2-i\epsilon} \bigg] }_{\text{\shortstack{basically \textit{the} interesting part -\\ the propagator comes from here}}} \cdot \underbrace{ \int \mathcal{D}x\, exp \bigg[ \frac{i}{2} \int \frac{dE}{\tau} \tilde{x}(E) (E^2 - \omega^2 +i\epsilon) \tilde{x}(-E) \bigg] }_{\text{\shortstack{{when } $f=0 \implies \braket{0}{0}_f	\, = \, 1$ \\ \text{ which is the ground state}}}}
 \end{align}
-As noted by Srednicki - a system in a ground state will remain in a ground state (aka itial and final states are ground $\braket{0}{0}$) unless acted on by an external force ($f \neq 0$) - which in this case it is, resulting in there being a propagator - a source term/current term (very much related to the J term in maxwell's eqns - in this case just the driving fq term. \\
+As noted by Srednicki - a system in a ground state will remain in a ground state (aka initial and final states are $\braket{0}{0}$) unless acted on by an external force ($f \neq 0$) - which in this case it is, resulting in there being a propagator - a source term/current term (very much related to the J term in maxwell's eqns - in this case just the driving fq term.) \\
 To actually proceed solving this we'll idntify the partts of the first term that aren't $\tilde{f}(something)$ dependent, act with that on a phasor and call it a green function. this will let us do a fourier/delta transform thing.
 \begin{align}
-	\braket{0}{0}_f &= exp \bigg[ \frac{i}{2} \int \underbrace{ \frac{dE}{\tau(-E^2+\omega^2-i\epsilon)}}_{\text{green fx}} \, \tilde{f}(E) \tilde{f}(-E) \bigg] \\
+	\braket{0}{0}_f &= exp \bigg[ \frac{i}{2} \int \underbrace{ \frac{dE}{\tau(-E^2+\omega^2-i\epsilon)}}_{\text{green fx}} \, \tilde{f}(E) \tilde{f}(-E) \bigg] \label{b3}\\[1.5Ex]
 	G(t-t') &= \int \frac{dE}{\tau(-E^2+\omega^2-i\epsilon)} \; e^{-iE(t-t')} \label{b1}
 \end{align}
-Where the green function is a solution to the wave eqn
+This shit is good cos now we can rewrite the $\braket{0}{0}_f$ (\ref{b3}) as a time domain integral:
+\begin{align}
+	Z_0 = \braket{0}{0}_f = exp \bigg[\int_{-\infty}^{\infty}\frac{i}{2}dt\,dt'\,f(t)G(t-t')f(t')\bigg] \label{b4}
+\end{align}
+Additionally, the green function must be a solution to the wave eqn in order to be even useful to begin with
 \begin{align}
 	(\partial_{t}^2 + \omega^2)G(t-t') = \delta(t-t') \label{b2}
 \end{align}
-in other words it's a well dressed delta function. or in other other words, a green function is the inverse of a differential operator. or in other other words it's a convolution function. there may be some other other other words, but idk, it should be pretty obv from its application how it works innit. \\
+in other words it's a well salad-dressed delta function producing function. or in other other words, a green function is the inverse of a differential operator. or in other other words it's a convolution function. there may be some other other other words, but idk, it should be pretty obv from its application how it works innit. \par
 Most importantly however, a green function is what's more commonly known as the propagator. \\
-In any case, let's actually test it out by chucking \ref{b1} into \ref{b2} explicitly:
+In any case, let's actually test it out by chucking (\ref{b1}) into (\ref{b2}) explicitly:
 \begin{align}
 	&(\partial_{t}^2 + \omega^2) \int \frac{dE}{\tau(-E^2+\omega^2-i\epsilon)} \; e^{-iE(t-t')} = \int \frac{dE}{\tau(-E^2+\omega^2-i\epsilon)} \; \left(\partial_{t}^2e^{-iE(t-t')} + \omega^2e^{-iE(t-t')}\right) = \\[1.5ex]
 	&= \int \frac{dE}{\tau(-E^2+\omega^2-i\epsilon)} \; \left((-iE)(-iE)e^{-iE(t-t')} + \omega^2e^{-iE(t-t')}\right) = \int \frac{dE}{\tau(-E^2+\omega^2-i\epsilon)} \; \left(-E^2 + \omega^2\right)e^{-iE(t-t')} = \\[1.5ex]
 	&=  \int \frac{dE}{\tau} \frac{\left(-E^2 + \omega^2\right)}{(-E^2+\omega^2-i\epsilon)} \; e^{-iE(t-t')}\stackrel{\epsilon \rightarrow 0}{=} \int \frac{dE}{\tau} \frac{\left(-E^2 + \omega^2\right)}{(-E^2+\omega^2)} \; e^{-iE(t-t')} = \int \frac{dE}{\tau} \; e^{-iE(t-t')} = \delta(t-t')
 \end{align}
-Beautiful, it fits. But back to business, but let's actually evaluate the propagator, we're gonna use funky ass Cauchy residue theorem or whatever the hell its properly called:
+Beautiful, it fits. But back to business, let's actually evaluate the propagator, we're gonna use funky ass Cauchy residue theorem or whatever the hell its properly called:
 \begin{align}
 \oint_{\gamma} f(z)dz = \tau i \sum_{a_i \in \gamma} Res_{z=a_i} f(z)
 \end{align}
@@ -92,4 +104,93 @@ Aka sum all the poles $a_i$ within the $\gamma$ contour. The residue is then jus
 \begin{align}
 	\int \frac{dE\; e^{-iE(t-t')}}{\tau(-E^2+\omega^2-i\epsilon)}  = -\int \frac{dE \; e^{-iE(t-t')}}{\tau\left( E + \sqrt{\omega^2 + i\epsilon}\right)\left( E + \sqrt{\omega^2 + i\epsilon}\right)}=
 \end{align}
+First a little rundown. What's happening here is that we have $e^-i(t-t')E$ as a complex circle and those two poles are within. One of the poles is in when $t-t' > 0$ the other when $t-t' <0$ (and no pole when 0 cos...well the fucking thing goes to zero innit ffs jkub).\par
+Alright that's kewl so now the two poles are the terms on the bottom, one with plus and the other with minus the mess in the square root. So first we take out one of them by equating it to $E$ and then the other one equating it to $-E$.\par
+The other cheat we oughtta do is completely $100\%$ mathematically rigorous so pay attention. $\epsilon$ is tiny af. so we just make it vanish clap joy 100 opencry. Mathematicians \textit{hate} him. This is peak maths, cherish it.\\
+Fo real tho it actually is tiny, so we make it vanish, which turns out things into $E=-\omega$ and $E=\omega$.\par
+Anyway, the trick goes fully like this: the roots are split, we wanna eliminate one of the poles so we take one of the solutions, and literally just remove the other fucking thing and replace it with 1. I'm not sure exactly why, but it does work, i really need something extra and replace this paragraph here with better info. \\
+in any case, here's the dirty:
+\begin{align}
+	-\int \frac{dE \; e^{-iE(t-t')}}{\tau\left( E + \sqrt{\omega^2 + i\epsilon}\right)\left( E + \sqrt{\omega^2 + i\epsilon}\right)}= \begin{cases}
+		 t>t' &= \frac{i\tau e^{-i\omega(t-t')}}{2 \tau  \omega} \\
+		 t<t' &= \frac{i\tau e^{i\omega(t-t')}}{2 \tau  \omega}
+	 \end{cases}
+\end{align}
+Now one of those fucks goes to 0 clearly (protip the one with the minus in the exponent) so we're effectively left with just one pole for large E innit. fucking banging. I thought i understood why, but now i don't understand why we keep this one and not the other one, fucking rip in peace.come back to this. \\
+Anyway the result is:
+\begin{align}
+	G(t-t') = \frac{i}{2\omega} e^{-i\omega\abs{t-t'}}
+\end{align}
+Next up, we need to time order the product of operators, and we'll be using the functional derivative to pull out some deltas:
+\begin{align}
+	\frac{\delta f(t_2)}{\delta f(t_1)} = \delta(t_1-t_2)
+\end{align}
+The delta on lhs is the functional delta, the delta on the rhs is the dirac delta (analogous to a partial derivative yielding kronecker delta). now let's order the fucker using:
+\begin{align}
+	\int \mathcal{D}f\, f(t_1)f(t_2) = \bra{f'',t''}TF(t_1)F(t_2)\ket{f',t'}
+\end{align}
+so applying this shizzle to our case (\ref{b4}) we get:
+\begin{align}
+\bra{0}TQ(t_1)Q(t_2)\ket{0} &= \frac{1}{i} \frac{\delta}{\delta f(t_1)} \frac{1}{i} \frac{\delta}{\delta f(t_2)} Z_0 \Big\rvert_{f=0} = \frac{1}{i} \frac{\delta}{\delta f(t_1)} \frac{1}{i} \frac{\delta}{\delta f(t_2)}exp \bigg[\int_{-\infty}^{\infty}\frac{i}{2}dt\,dt'\,f(t)G(t-t')f(t')\bigg] \Big\rvert_{f=0}= \\
+			    &=   \frac{1}{i}\frac{1}{i} \frac{\delta}{\delta f(t_1)}  \Bigg[\bigg[\int_{-\infty}^{\infty}\frac{i}{2}dt\,dt'\,\frac{\delta f(t)}{\delta f(t_2)}G(t-t')f(t')\bigg] \nonumber\\ \begin{split}&\quad + \bigg[\int_{-\infty}^{\infty}\frac{i}{2}dt\,dt'\,f(t)\cancelto{0}{\frac{\delta G(t-t')}{\delta f(t_2)}}f(t')\bigg] \\[1.5ex] &\quad + \bigg[\int_{-\infty}^{\infty}\frac{i}{2}dt\,dt'\,f(t)G(t-t')\frac{\delta f(t')}{\delta f(t_2)}\bigg] \Bigg] Z_0 \Big\rvert_{f=0}=  \end{split} \\[1.5ex]
+			    &= \frac{1}{i}\frac{1}{i} \frac{\delta}{\delta f(t_1)}  \Bigg[\bigg[\int_{-\infty}^{\infty}\frac{i}{2}dt\,dt'\,\delta(t_2-t)G(t-t')f(t')\bigg] + \bigg[\int_{-\infty}^{\infty}\frac{i}{2}dt\,dt'\,f(t)G(t-t')\delta(t_2-t')\bigg] \Bigg] Z_0 \Big\rvert_{f=0}=
+\end{align}
+Now we have a big fucknig mess, but fortunately we can integrate out those pesky deltas using (\ref{delta}), yielding:
+\begin{align}
+			    &= \frac{1}{i}\frac{1}{i} \frac{\delta}{\delta f(t_1)}  \Bigg[\bigg[\int_{-\infty}^{\infty}\frac{i}{2}dt'\,G(t_2-t')f(t')\bigg] + \bigg[\int_{-\infty}^{\infty}\frac{i}{2}dt\,f(t)G(t-t_2)\bigg] \Bigg] Z_0 \Big\rvert_{f=0}= 
+\end{align}
+Now, clearly we have integrated out the dependence of t and t' within the integrals, thus being able to get rid of dummy time and realise that we're really integrating 2 lots of two halves over all t, leaving us with the following compact expression:
+\begin{align}
+			    &= \frac{1}{i} \frac{\delta}{\delta f(t_1)} \left[ \int_{-\infty}^{\infty}dt'\,G(t_2-t')f(t') \right] Z_0 \Big\rvert_{f=0}=
+\end{align}
+And lastly we'll repeat the previous step but on this now compound integral, but i ain't gonna write this shit out in latex again this is a serious pita, just keep track of all the brackets and shit. At the end there'll be one propagator left and a whole bunch of f's. But since we're evaluating at f=0, those fuckers all go to zero and we'll be left with just the propagator itself:
+\begin{align}
+			    &= \left[ \frac{1}{i} G(t_2-t_1) + (\text{term with fs}) \right] Z_0 \Big\rvert_{f=0} = \frac{1}{i}G(t_2-t_1)
+\end{align}
+Now clearly this is just a couple of Q's but we can do this as many times as we want, but we gotta take care of the whole ordering business wrtt propagators. just to copy the last bit of srednicki, here's the whole spiel with 4 Qs:
+\begin{align}
+	\bra{0}TQ(t_1)Q(t_2)Q(t_3)Q(t_4)\ket{0} &=  \frac{1}{i^2}\Big[G(t_1-t_2)G(t_3-t_4) + G(t_1-t_3)G(t_2-t_4) + G(t_1-t_4)G(t_2-t_3)\Big]
+\end{align}
+One extra thing to note here is that there's a general pairing formula:
+\begin{align}
+	\bra{0}TQ(t_1)\ldots Q(t_{2n}\ket{0} = \frac{1}{i^n} \sum_{pairings}G(t_{i_1}-t_{i_2})\ldots G(t_{i_{2n-1}}-t_{i_{2n}})
+\end{align}
+And finally to note is that when we have an odd number of Q's there's always gonna be an extra $f(t)$ prefactor fucker leftover giving a zero result overall as we evaluate at f=0.\par
+Now why was this so important. Well this was very much a simplified version of the scalar field, but only in 1D (integrating over time). So naturally the next step would be translating all this shit into the simplest $\mathcal{O}(1)$ theory.
+
+\section*{Scalar free-field theory path integral}%
+Alright, strictly speaking, we really only need the $\mathcal{L}$ in order to compute the path integral, but Srednicki begins with the $\mathcal{H}_0$ in order to draw some parallels to the previous system.
+\begin{align}
+	\mathcal{H}_0	= \frac{1}{2} \Pi^2 + \frac{1}{2}(\nabla \phi)^2 + \frac{1}{2}m^2 \phi^2
+\end{align}
+Namely, multiplying $\mathcal{H}_0$ by $(1-i\epsilon)$ which will shift $m^2 \rightarrow m^2-i\epsilon$ letting us do the whole evaluation at infinity trick. In any case, the whole rundown is available in the book, here I've gone over the previous section as explicitly as possible in order not to repeat myslef so there's gonna be some jumps involved.\par
+
+The path integral will now look like:
+\begin{align}
+	Z_0(J) = \braket{0}{0}_J = \int \mathcal{D}\phi\, e^{i\int d^4x \, [\mathcal{L}]}
+\end{align}
+Where the full laggy $\mathcal{L}$ is now composed of the scalar theory laggy as well as a source term:
+\begin{align}
+	\mathcal{L}=\mathcal{L}_0+\mathcal{L}_J=-\frac{1}{2}\partial^\mu\phi\partial_\mu\phi -\frac{1}{2}m^2\phi^2 + J\phi
+\end{align}
+Where $J\phi$ - a term linear in the field, is now the source term, and the J is the current (as noted in the previous section, if this were EM, it'd be the same J that appears in maxwell's eqns). The process is equivalent to the driving SHO term $f$ from the previous section.\\
+Note that the E-L eqns will yield:
+\begin{align}
+	\frac{\delta S(\phi)}{\delta \phi(x)} = -J
+\end{align}
+So from here on out we'd proceed with the same procedure as before - pick good fourier transforms - but instead of just a $t\omega$ we'll have $k_\mu x^\mu$ to work with. This will transform the action into k-space, and just as before after some manipulation will pick out a propagator term:
+\begin{align}
+	\Delta(x-x')=\int \frac{d^4k}{\tau^4} \frac{e^{ik(x-x')}}{k^2+m^2-i\epsilon} 
+\end{align}
+This propagator is a solution to the Klein-Gordon field:
+\begin{align}
+	(-\partial^2_x+m^2)\Delta(x-x')=\delta^4(x-x')
+\end{align}
+One extra step to do here that has not been done before is to re-express this in momentum space in order to obtain the familiar feynman propagator form:
+\begin{align}
+	(k^2+m^2)\tilde{\Delta}(k-k')=1 \\[1.5Ex]
+	\Delta(x-x')= \lim_{\epsilon \to 0} \int \frac{d^4k}{\tau^4} \frac{e^{ik(k-k')}}{k^2+m^2-i\epsilon} \\[1.5Ex]
+	\tilde{\Delta}(k)= \frac{1}{k^2+m^2-i\epsilon} 
+\end{align}
+Which is ofc the same shit that's used in feynman diagram calculations. And that's that. Done.
 \end{document}

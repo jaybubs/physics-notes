@@ -56,6 +56,8 @@ INPUT c:\Latex\Miktex\texmfs\install\tex\latex\l3kernel\l3pdfmode.def
 INPUT c:\Latex\Miktex\texmfs\install\tex\latex\l3kernel\l3pdfmode.def
 INPUT c:\Latex\Miktex\texmfs\install\tex\latex\tools\array.sty
 INPUT c:\Latex\Miktex\texmfs\install\tex\latex\tools\array.sty
+INPUT c:\Latex\Miktex\texmfs\install\tex\latex\cancel\cancel.sty
+INPUT c:\Latex\Miktex\texmfs\install\tex\latex\cancel\cancel.sty
 INPUT sred.aux
 INPUT sred.aux
 OUTPUT sred.aux
@@ -85,10 +87,12 @@ INPUT c:\Latex\Miktex\texmfs\install\fonts\tfm\public\lm\rm-lmri10.tfm
 INPUT c:\Latex\Miktex\texmfs\install\fonts\tfm\public\lm\rm-lmri7.tfm
 INPUT c:\Latex\Miktex\texmfs\install\fonts\tfm\public\lm\rm-lmri7.tfm
 INPUT sred.aux
-INPUT c:\Latex\Miktex\texmfs\install\fonts\enc\dvips\lm\lm-mathit.enc
 INPUT c:\Latex\Miktex\texmfs\install\fonts\enc\dvips\lm\lm-rm.enc
+INPUT c:\Latex\Miktex\texmfs\install\fonts\enc\dvips\lm\lm-mathit.enc
 INPUT c:\Latex\Miktex\texmfs\install\fonts\enc\dvips\lm\lm-mathsy.enc
 INPUT c:\Latex\Miktex\texmfs\install\fonts\enc\dvips\lm\lm-mathex.enc
+INPUT c:\Latex\Miktex\texmfs\install\fonts\type1\public\amsfonts\latxfont\line10.pfb
+INPUT c:\Latex\Miktex\texmfs\install\fonts\type1\public\amsfonts\latxfont\line10.pfb
 INPUT c:\Latex\Miktex\texmfs\install\fonts\type1\public\lm\lmbx12.pfb
 INPUT c:\Latex\Miktex\texmfs\install\fonts\type1\public\lm\lmbx12.pfb
 INPUT c:\Latex\Miktex\texmfs\install\fonts\type1\public\lm\lmex10.pfb
@@ -101,8 +105,12 @@ INPUT c:\Latex\Miktex\texmfs\install\fonts\type1\public\lm\lmmi7.pfb
 INPUT c:\Latex\Miktex\texmfs\install\fonts\type1\public\lm\lmmi7.pfb
 INPUT c:\Latex\Miktex\texmfs\install\fonts\type1\public\lm\lmr10.pfb
 INPUT c:\Latex\Miktex\texmfs\install\fonts\type1\public\lm\lmr10.pfb
+INPUT c:\Latex\Miktex\texmfs\install\fonts\type1\public\lm\lmr5.pfb
+INPUT c:\Latex\Miktex\texmfs\install\fonts\type1\public\lm\lmr5.pfb
 INPUT c:\Latex\Miktex\texmfs\install\fonts\type1\public\lm\lmr7.pfb
 INPUT c:\Latex\Miktex\texmfs\install\fonts\type1\public\lm\lmr7.pfb
+INPUT c:\Latex\Miktex\texmfs\install\fonts\type1\public\lm\lmri10.pfb
+INPUT c:\Latex\Miktex\texmfs\install\fonts\type1\public\lm\lmri10.pfb
 INPUT c:\Latex\Miktex\texmfs\install\fonts\type1\public\lm\lmri7.pfb
 INPUT c:\Latex\Miktex\texmfs\install\fonts\type1\public\lm\lmri7.pfb
 INPUT c:\Latex\Miktex\texmfs\install\fonts\type1\public\lm\lmsy10.pfb
