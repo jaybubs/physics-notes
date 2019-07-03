@@ -1,0 +1,79 @@
+to add an alias into bashrc
+$ vim ~/.bashrc
+> alias aliascommand='whatever needs be done'
+
+add user to docker group
+$ sudo usermod -aG docker $USER
+
+meganote for wsl
+when mapping volumes, use the windows path (note whether it's /mnt/c or /c) instead of just starting from home, beacuse of reasons
+
+docker images can be saved and moved
+$ docker save -o <path-for-generated-tar-file-and-filename-include-.tar> <imagename>
+
+and ofc loaded
+$ docker load -i <path-to-tar-image>
+
+start fermi
+$ docker start ferminame
+
+to (re)attach to the container
+$ docker attach ferminame
+
+to escape it use the <C-p>+<C-q> sequence or the same followed by <C-z> in wsl, this will keep it running
+otherwise can be shut down by typing
+$ exit
+
+if shat down, can get back into by
+$ docker start ferminame && docker attach ferminame
+
+to add to path
+PATH=$PATH:<path-to-folder>
+
+to start using python scripts within fermi-bottle
+$ conda activate fermi
+
+to stop
+$ conda deactivate
+
+to use gspec which is standalone
+$ conda activate py3
+
+to get detailed help about gtcommands fhelp it
+$ fhelp gttask
+
+first download the PH** and SC** files for photons and spacecraft, dont' forget to copypaste query results
+then shove all PH** files into one
+$ Lblabla_P* > events.txt
+
+now can run gtselect
+$ gtselect evclass=128 evtype=3
+where input is @events.txt
+output is name-sel.fits
+
+next run gtmktime to grab only good times
+$ gtmktime
+event data file is name-sel.fits from previous
+will output name-gti.fits
+
+next run gtbin to generate a neat counts map
+event data file is name-gti.fits
+will output name-cmap.fits
+make sure to pick a neat image scale, eg 600/wwwwwwxel axes, with 0.05 degrees per pixel for a 15 degree radius region gives neat detail
+
+next run gtbin again to generate a countcube, this one wwill have to be smaller than the previous one such that the radius is basically the half side of the inscribed square (eg if radius was 600, then the side here should be 420, aka div by sqrt(2)
+event data file is name-gti.fits
+will outptu name-ccube.fits
+
+now to create source xml, use the make4FGLxml.py tool from the user tools section, check the helpfile for all inputs and outputs
+
+inbetweenstep - gtdiffrsp - to add diffuse response to the gti file
+input name-gti.fits
+model - generated xml from previous pass
+response - P8R3_SOURCE_V2 for photon, source, background, thing
+
+now create livetimecube using gtltcube, this will be used later, but beware, this fucking fing takes forever
+event data file is name-gti.fits
+output is name-gtltcube.fits
+
+and finally - the part where i'm stuck, fucking gtexpcube2 - exposure, it should load the iso exposure, update sources and shit but instead misbehaves

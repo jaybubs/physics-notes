@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{physics}
+\usepackage{array} 
+
+\begin{document}
+We want vac-vac so: 
+\begin{align}
+    \braket{0}{0}=\int \mathcal{D} \phi \,exp \left( i \int d^4x \mathcal{L}_0 \right)
+\end{align}
+Define a new object that will help find \,expectation values with the help of the current J
+\begin{align}
+    \braket{0}{0}_J = \int \mathcal{D} \phi \,exp \left( i \int d^4x \mathcal{L}_0 + J\phi \right)
+\end{align}
+The \,expectation value of $\phi$ is:
+\begin{align}
+    \bra{0}\phi\ket{0} = -i \delta_J \braket{0}{0}_J \Big\rvert_{J=0}
+\end{align}
+operating once:
+\begin{align}
+-i \delta_J \braket{0}{0}_J \Big\rvert_{J=0} = -i \cdot i \phi \braket{0}{0}_J \Big\rvert_{J=0} = \phi \cdot (1 (\text{normalised} Z_0))
+\end{align}
+ofc we're free to normalise shit as we want, so the obvious choice here is to normalise:
+\begin{align}
+    Z_0 = \braket{0}{0}_J \Big\rvert_{J=0} = 1
+\end{align}
+Now for the interaction one that will get a new term $\mathcal{L}_1$, bearing in mind we want vacuum again:
+\begin{align}
+    \braket{0}{0}_J = Z = Z_1 Z_0 &= \int \mathcal{D}\phi \,exp \left( i \int d^4x \mathcal{L}_0 + \mathcal{L}_1 + J\phi \right) = \\
+                                  &= \int \mathcal{D}\phi \,exp \left( i \int d^4x \mathcal{L}_1  \right) exp \left( i\int d^4x \mathcal{L}_0  + J\phi \right) = \braket{0}{0}_J\int \mathcal{D}\phi \,exp \left( i \int d^4x \mathcal{L}_1  \right) 
+\end{align}
+and now somehow by magic i'm supposed to believe based on all the stupid shit above that:
+\begin{align}
+    \mathcal{L}_1 (\phi) \to \mathcal{L}_1 (-i \delta_J) \implies \phi^N \to (-i \delta_J)^N
+\end{align}
+but my problem here is that we still want $\braket{0}{0}_J$ and \textit{not} $\bra{0}\phi\ket{0}$ which actually \textit{would} allow me to do this fucking stupid move or at least partially up to the implication because for some reason it's assumed that $\bra{0}\phi\ket{0} = \phi$?? like i can \textit{sorta} follow the logic, but can't do it explicitly for some reason, and absolutely no goddamn book in existence does this explicitly and i swear at this point i must be failing some absotulely basic highschool manoeuoevre\par
+defining
+\begin{align}
+    \mathcal{L}_1 = \phi^3
+\end{align}
+taylor expanding
+\begin{align}
+    \int \mathcal{D} \phi \, exp \left( \phi^3 \right) \, exp(free) \propto  \int \mathcal{D}\phi\sum \frac{(\phi^3)^n}{n!} \, exp(free) 
+\end{align}
+\end{document}
