@@ -90,9 +90,9 @@ the cube has to fit in completely into the outscribed circle, a quick way to det
 first thing first, wget/curl/copy the goddamn make4FGxml.py cos fuck doing this by hand. it'll take in a catalogue, binned events file and spit out a source file - by default it'll only spit out whatever htingy exsits, without any simulated powerlaw/dmfit/other sources, those have to be added manually later\\
 the diffuse models are in \$FERMI\_DIR so echo that fucker to find out, because the python thing itself might mess up sometimes
 \begin{verbatim}
-    $ python make4FGxml.py gll_psc_v18.fit object_binned_gti.fits -o object_input_model.xml 
-    -G $FERMI_DIR/refdata/galdiffuse/gll_iem_v07.fits -g g11_iem_v07 
-    -I $FERMI_DIR/refdata/galdiffuse/iso_P8R3_SOURCE_V2_v1.txt -i iso_P8R3_SOURCE_V2_v1 
+    $ python make4FGxml.py gll_psc_v18.fit object_binned_gti.fits -o object_input_model.xml \
+    -G $FERMI_DIR/refdata/galdiffuse/gll_iem_v07.fits -g g11_iem_v07 \
+    -I $FERMI_DIR/refdata/galdiffuse/iso_P8R3_SOURCE_V2_v1.txt -i iso_P8R3_SOURCE_V2_v1 \
     -s 120 -p TRUE
 \end{verbatim}
 the psc file might need be downloaded cos reasons, the -s takes care of significance, -p includes point sources \\
@@ -141,7 +141,7 @@ fucking finally, alright, first of all, it's a fucking piece of shit running thi
 \sout{oh brilliant idea - run xterm, that should work} nope, but clearly running this directly in lunex or windoze as opposed to wsl should be ok, maybe i'll come back to this later or at least figure out how to plot manually ffs\\
 now, this is straight forward cos we have all the inputs:
 \begin{verbatim}
-    $ gtlike refit=yes plot=yes sfile=object_binned_output.xml
+    $ gtlike refit=yes plot=yes sfile=object_binned_output.xml \
     results=object_results_type.dat specfile=object_spectra_type.fits [> object_log.txt]
     stats: BINNED
     counts file: object_srcmaps.fits
