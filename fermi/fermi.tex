@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage{physics}
 \usepackage{array}
+\usepackage[normalem]{ulem} 
 
 \begin{document}
 1. Pick the object
@@ -137,7 +138,7 @@ here we'll make use of the fkn xml finally creating a file that will be passed o
 caveat: if this shit fails (especially file not found shit), instead of googling like mad, try to remake the input file a couple of times
 \subsection{gtlike - likelihood}%
 fucking finally, alright, first of all, it's a fucking piece of shit running this on wsl, not because of performance, quite the contrary that's fine, but due to the fucking goddamn impossibility to display the fucking plot right away, so have fun with the output\\
-oh brilliant idea - run xterm, that should work\\
+\sout{oh brilliant idea - run xterm, that should work} nope, but clearly running this directly in lunex or windoze as opposed to wsl should be ok, maybe i'll come back to this later or at least figure out how to plot manually ffs\\
 now, this is straight forward cos we have all the inputs:
 \begin{verbatim}
     $ gtlike refit=yes plot=yes sfile=object_binned_output.xml
@@ -152,6 +153,36 @@ now, this is straight forward cos we have all the inputs:
 \end{verbatim}
 not much to add, refit will offer a chance to edit the source and will attempt refitting, plot will plot (when possible), sfile is the output name, other shit gets logged into default names
 
-
+\subsection{gtmodel - creating a model map}%
+now that the results and/or model source have been chucked into a binned output, we'll use that to create a new plot based off of that
+\begin{verbatim}
+    $ gtmodel
+    source maps: object_srcmaps.fits
+    source model: object_binned_output.xml
+    output: object_model_map.fits
+    response: CALDB
+    exposure cube: object_ltcube.fits
+    binned exp map: object_expcube.fits
+\end{verbatim}
+This will create a sweet af looking map to look at, but ofc it makes sense to compare this to the original. So we'll redo the entire restricted view thing again but with the original counts.
+\begin{verbatim}
+    $ gtbin
+    output type: CMAP
+    event file: object_binned_gti.fits
+    output file: object_binned_cmap_small.fits
+    spacecraft: NONE
+    X, Y,axis: see ccube
+    scale: see ccube
+    coords: see query
+    projection: STG
+\end{verbatim}
+theree's one final step in computing the residual map as according to the fermi tutorial. however this shit doesn't work in conda for some reason, anyway, here's the log in case it gets fixed and/or you'll be using it directly in lunix. it'll get the residual map to check for incostincencies.
+\begin{verbatim}
+    $ farith
+    1st FITS: object_binned_cmap_small.fits
+    2nd FITS: object_madel_map.fits
+    Output name: object_residual_model.fits
+    Operation: SUB
+\end{verbatim}
 
 \end{document}

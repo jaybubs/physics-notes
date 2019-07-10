@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.24)  18 JUN 2019 17:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.24)  10 JUL 2019 15:40
 entering extended mode
 **./fermi.tex
 (fermi.tex
@@ -269,92 +269,4 @@ Package: expl3 2019-04-21 L3 programming layer (code)
 \c__deprecation_minus_one=\count188
 )
 (C:\MiKTeX\tex/latex/l3kernel\l3pdfmode.def
-File: l3pdfmode.def 2019-04-06 v L3 Experimental driver: PDF mode
-\l__driver_color_stack_int=\count189
-))
-Package: xparse 2019-03-05 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count190
-\g__xparse_grabber_int=\count191
-\l__xparse_m_args_int=\count192
-\l__xparse_v_nesting_int=\count193
-))
-(C:\MiKTeX\tex/latex/tools\array.sty
-Package: array 2018/12/30 v2.4k Tabular extension package (FMi)
-\col@sep=\dimen152
-\ar@mcellbox=\box47
-\extrarowheight=\dimen153
-\NC@list=\toks21
-\extratabsurround=\skip52
-\backup@length=\skip53
-\ar@cellbox=\box48
-) (fermi.aux)
-\openout1 = `fermi.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-
-*geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
-*geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
-* paper: <default>
-* layout: <same size as paper>
-* layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
-* h-part:(L,W,R)=(36.135pt, 542.02501pt, 36.135pt)
-* v-part:(T,H,B)=(36.135pt, 722.7pt, 36.135pt)
-* \paperwidth=614.295pt
-* \paperheight=794.96999pt
-* \textwidth=542.02501pt
-* \textheight=722.7pt
-* \oddsidemargin=-36.135pt
-* \evensidemargin=-36.135pt
-* \topmargin=-73.135pt
-* \headheight=12.0pt
-* \headsep=25.0pt
-* \topskip=10.0pt
-* \footskip=30.0pt
-* \marginparwidth=65.0pt
-* \marginparsep=11.0pt
-* \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
-* \hoffset=0.0pt
-* \voffset=0.0pt
-* \mag=1000
-* \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
-* \@reversemarginfalse
-* (1in=72.27pt=25.4mm, 1cm=28.453pt)
-
-[1
-
-{C:/Users/jakub.stefula/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-[2] [3] (fermi.aux) ) 
-Here is how much of TeX's memory you used:
- 11518 strings out of 492902
- 210737 string characters out of 3141910
- 253511 words of memory out of 3000000
- 15446 multiletter control sequences out of 15000+200000
- 534170 words of font info for 31 fonts, out of 3000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 47i,7n,65p,362b,317s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/M
-iKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmtt10.pfb>
-Output written on fermi.pdf (3 pages, 64637 bytes).
-PDF statistics:
- 24 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+File: l3

@@ -1,10 +1,11 @@
 # Fdb version 3
-["pdflatex"] 1560870170 "fermi.tex" "fermi.pdf" "fermi" 1560870172
+["pdflatex"] 1562765897 "fermi.tex" "fermi.pdf" "fermi" 1562765899
   "C:/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
   "C:/MiKTeX/fonts/tfm/public/cm/cmbx12.tfm" 1136765053 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "C:/MiKTeX/fonts/tfm/public/cm/cmr10.tfm" 1136765053 1296 45809c5a464d5f32c8f98ba97c1bb47f ""
   "C:/MiKTeX/fonts/tfm/public/cm/cmr12.tfm" 1136765053 1288 655e228510b4c2a1abe905c368440826 ""
   "C:/MiKTeX/fonts/tfm/public/cm/cmtt10.tfm" 1136765053 768 1321e9409b4137d6fb428ac9dc956269 ""
+  "C:/MiKTeX/fonts/tfm/public/latex-fonts/lasy6.tfm" 1136765053 520 4889cce2180234b97cad636b6039c722 ""
   "C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
   "C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
   "C:/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1247596667 31099 c85edf1dd5b9e826d67c9c7293b6786c ""
@@ -28,11 +29,12 @@
   "C:/MiKTeX/tex/latex/l3packages/xparse/xparse.sty" 1551774890 81462 655bedd2015c238adc6b36a18cbe98c9 ""
   "C:/MiKTeX/tex/latex/physics/physics.sty" 1356002062 29610 a9597219b282d9c78b02393dcd7d4322 ""
   "C:/MiKTeX/tex/latex/tools/array.sty" 1546708598 12527 31ab547f6520657998ecf91709f950ac ""
+  "C:/MiKTeX/tex/latex/ulem/ulem.sty" 1338509872 23756 854c01b779030ff5b2aad88ba7a119f2 ""
   "C:/Users/jakub.stefula/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt" 1556095378 4222171 321602e0814d91f771d8d5afd15787c6 ""
-  "C:/Users/jakub.stefula/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map" 1556114698 126306 735233d466171031ce409b29356d19cc ""
-  "fermi.aux" 1560870171 1212 ccd45957c37e576eb2c41ba11ae368f5 "pdflatex"
-  "fermi.tex" 1560870168 7719 2ae7fdc9c475acdbe83de0950876fa97 ""
+  "C:/Users/jakub.stefula/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map" 1562147694 126306 735233d466171031ce409b29356d19cc ""
+  "fermi.aux" 1562765899 1335 6832d878c68a5b51833ae2cf7d9e306b "pdflatex"
+  "fermi.tex" 1562765897 8842 a3cbfcd49d3abaf7768d323e9121c768 ""
   (generated)
-  "fermi.log"
   "fermi.aux"
+  "fermi.log"
   "fermi.pdf"

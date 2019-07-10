@@ -1,4 +1,4 @@
-PWD c:\Jakub's misc stuff\miscnotes
+PWD c:\Jakub's misc stuff\physics-notes\fermi
 INPUT C:\Users\jakub.stefula\AppData\Local\MiKTeX\2.9\miktex\data\le\pdftex\pdflatex.fmt
 INPUT fermi.tex
 OUTPUT fermi.log
@@ -54,6 +54,9 @@ INPUT C:\MiKTeX\tex\latex\l3kernel\l3pdfmode.def
 INPUT C:\MiKTeX\tex\latex\l3kernel\l3pdfmode.def
 INPUT C:\MiKTeX\tex\latex\tools\array.sty
 INPUT C:\MiKTeX\tex\latex\tools\array.sty
+INPUT C:\MiKTeX\tex\latex\ulem\ulem.sty
+INPUT C:\MiKTeX\tex\latex\ulem\ulem.sty
+INPUT C:\MiKTeX\fonts\tfm\public\latex-fonts\lasy6.tfm
 INPUT fermi.aux
 INPUT fermi.aux
 OUTPUT fermi.aux
